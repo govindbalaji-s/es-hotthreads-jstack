@@ -240,6 +240,7 @@ class JStackDumpParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.name = None # Token
 
         def Quote(self, i:int=None):
             if i is None:
@@ -276,7 +277,7 @@ class JStackDumpParser ( Parser ):
             self.state = 28
             self.match(JStackDumpParser.Quote)
             self.state = 29
-            self.match(JStackDumpParser.NoQuote)
+            localctx.name = self.match(JStackDumpParser.NoQuote)
             self.state = 30
             self.match(JStackDumpParser.Quote)
             self.state = 31

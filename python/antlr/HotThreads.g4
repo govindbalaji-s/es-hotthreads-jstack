@@ -1,18 +1,21 @@
 grammar HotThreads;
 dump: bplate threadDump*;
 
-bplate: quoteLessLine*;
+bplate: quoteLessLine+;
 
 threadDump: threadHeader threadInfo;
 
-threadHeader: Percentage NoQuote '\'' NoQuote '\'\n';
-threadInfo: quoteLessLine*;
+threadHeader: WS Percentage unquoted Quote name=unquoted Quote NL;
+threadInfo: (quoteLessLine)*;
 
 
-quoteLessLine: ('\n')* NoQuote ('\n')*;
-NoQuote: (~['\n])+;
+quoteLessLine: (unquoted NL | NL)+;
+unquoted: (NoQuote | WS)+;
 Quote: '\'';
+NL: '\n';
+WS: (' ' | '\t')+;
 
 Percentage: Digit+ (Dot Digit+)? '%';
-Digit: [0-9];
-Dot: '.';
+fragment Digit: [0-9];
+fragment Dot: '.';
+NoQuote: .;

@@ -62,5 +62,14 @@ class HotThreadsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by HotThreadsParser#unquoted.
+    def enterUnquoted(self, ctx:HotThreadsParser.UnquotedContext):
+        pass
+
+    # Exit a parse tree produced by HotThreadsParser#unquoted.
+    def exitUnquoted(self, ctx:HotThreadsParser.UnquotedContext):
+        pass
+
+
 
 del HotThreadsParser

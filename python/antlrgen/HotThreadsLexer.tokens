@@ -1,7 +1,7 @@
-T__0=1
-T__1=2
-NoQuote=3
-Quote=4
-'\'\n'=1
+Quote=1
+NL=2
+WS=3
+Percentage=4
+NoQuote=5
+'\''=1
 '\n'=2
-'\''=4

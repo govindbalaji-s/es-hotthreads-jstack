@@ -5,7 +5,7 @@ bplate: quoteLessLine*;
 
 threadDump: threadHeader threadInfo;
 
-threadHeader: '"' NoQuote '"' NoQuote '\n'+;
+threadHeader: '"' name=NoQuote '"' NoQuote '\n'+;
 threadInfo: quoteLessLine*;
 
 
