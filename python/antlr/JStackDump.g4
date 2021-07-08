@@ -1,7 +1,7 @@
 grammar JStackDump;
 dump: bplate threadDump*;
 
-bplate: quoteLessLine*;
+bplate: timestamp=NoQuote '\n' quoteLessLine*;
 
 threadDump: threadHeader threadInfo;
 

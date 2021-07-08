@@ -1,11 +1,6 @@
 import unittest
 
 from ThreadInfo import HotThread
-from antlrgen.HotThreadsLexer import HotThreadsLexer
-from antlrgen.HotThreadsParser import HotThreadsParser
-from antlr4 import *
-
-from hotThreadsJStack import context_list_length
 
 
 class HotThreadsTestCase(unittest.TestCase):

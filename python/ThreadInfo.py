@@ -13,7 +13,31 @@ class CatTask:
 
 
 class JStack:
-    pass
+
+    def __init__(self, thread_dump: JStackDumpParser.ThreadDumpContext, timestamp: str):
+        thread_header = thread_dump.threadHeader()
+        self._name: str = thread_header.name.text
+        self._timestamp: str = timestamp
+        self._contents: str = thread_dump.getText()
+
+    # Parse jstacks from given file. Returns list of jstacks of threads whose name is in filter_thread_names
+    # If filter_thread_names is None, returns all threads.
+    @staticmethod
+    def parse_jstacks(file_name, filter_thread_names) -> List['JStack']:
+        input_stream = FileStream(file_name)
+        lexer = JStackDumpLexer(input_stream)
+        stream = CommonTokenStream(lexer)
+        parser = JStackDumpParser(stream)
+        dump = parser.dump()
+        timestamp = dump.bplate().timestamp.text
+
+        jstacks = []
+        for thread_idx in range(context_list_length(dump.threadDump)):
+            thread_dump = dump.threadDump(thread_idx)
+            jstack = JStack(thread_dump, timestamp)
+            if filter_thread_names is None or jstack._name in filter_thread_names:
+                jstacks.append(jstack)
+        return jstacks
 
 
 class HotThread:
@@ -33,7 +57,7 @@ class HotThread:
     def percentage(self) -> float:
         return self._usage_time / self._interval
 
-    def parse_shard_task(self) -> str:
+    def parse_shard_task(self) -> None:
         name = self._name
         ltask = name.rindex('[taskId=')
         rtask = name.rindex(']')
@@ -41,12 +65,11 @@ class HotThread:
         name = name[:ltask]
         lshard = name.rindex('[')
         rshard = name.rindex(']')
-        self._shard = name[lshard + 1: rshard-1]
+        self._shard = name[lshard + 1: rshard - 1]
         name = name[:lshard]
         lindex = name.rindex('[')
         rindex = name.rindex(']')
         self._index = name[lindex + 1: rindex]
-
 
     @staticmethod
     def parse_hot_threads(file_name) -> List['HotThread']:
