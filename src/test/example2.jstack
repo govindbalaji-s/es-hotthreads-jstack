@@ -1,0 +1,1109 @@
+2021-07-07 12:50:23
+Full thread dump OpenJDK 64-Bit Server VM (15.0.1+9 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007fa866b8f4a0, length=69, elements={
+0x00007fa86080a200, 0x00007fa860808200, 0x00007fa85f80c200, 0x00007fa863039200,
+0x00007fa863039800, 0x00007fa863039e00, 0x00007fa86303a400, 0x00007fa863062a00,
+0x00007fa863818000, 0x00007fa85e8fa000, 0x00007fa85f477a00, 0x00007fa860be5a00,
+0x00007fa86c0dae00, 0x00007fa85eecea00, 0x00007fa86c0d7400, 0x00007fa86c139a00,
+0x00007fa85eece200, 0x00007fa86c148600, 0x00007fa86c175a00, 0x00007fa862993800,
+0x00007fa85e8e7600, 0x00007fa86c19b600, 0x00007fa86c17c800, 0x00007fa86c17ce00,
+0x00007fa86c17d400, 0x00007fa862844c00, 0x00007fa85e8e5e00, 0x00007fa8609dba00,
+0x00007fa86c195c00, 0x00007fa860cbfe00, 0x00007fa863431c00, 0x00007fa86d13bc00,
+0x00007fa85fc23e00, 0x00007fa8631a7000, 0x00007fa85fc24400, 0x00007fa867009600,
+0x00007fa867009c00, 0x00007fa86d13c200, 0x00007fa85e8e6400, 0x00007fa86c17b600,
+0x00007fa85e8e6a00, 0x00007fa86c199c00, 0x00007fa86c199600, 0x00007fa86c1a9000,
+0x00007fa85ef0b000, 0x00007fa85ef16a00, 0x00007fa85ef0ce00, 0x00007fa864fcde00,
+0x00007fa85ef0d400, 0x00007fa86d136e00, 0x00007fa85ef17800, 0x00007fa85ef17000,
+0x00007fa85f8a0800, 0x00007fa85f894200, 0x00007fa85ef00600, 0x00007fa85f7d4e00,
+0x00007fa863c47a00, 0x00007fa86b321a00, 0x00007fa86298b400, 0x00007fa863d4ec00,
+0x00007fa85f0b5e00, 0x00007fa863ac2e00, 0x00007fa85f3b1800, 0x00007fa85f0a8e00,
+0x00007fa85f1efe00, 0x00007fa86d1b2e00, 0x00007fa85f1f0400, 0x00007fa85f1f3600,
+0x00007fa863d42c00
+}
+
+"Reference Handler" #2 daemon prio=10 os_prio=31 cpu=4.54ms elapsed=183.66s tid=0x00007fa86080a200 nid=0x3a03 waiting on condition  [0x000070000ce19000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@15.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@15.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@15.0.1/Reference.java:213)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=31 cpu=17.76ms elapsed=183.66s tid=0x00007fa860808200 nid=0x3b03 in Object.wait()  [0x000070000cf1c000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@15.0.1/Native Method)
+	- waiting on <0x0000000740000458> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@15.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000740000458> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@15.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@15.0.1/Finalizer.java:170)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=31 cpu=0.26ms elapsed=183.66s tid=0x00007fa85f80c200 nid=0x5c03 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #5 daemon prio=9 os_prio=31 cpu=18.75ms elapsed=183.66s tid=0x00007fa863039200 nid=0xa203 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=31 cpu=12552.39ms elapsed=183.66s tid=0x00007fa863039800 nid=0x6103 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #14 daemon prio=9 os_prio=31 cpu=1915.59ms elapsed=183.66s tid=0x00007fa863039e00 nid=0x9f03 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #18 daemon prio=9 os_prio=31 cpu=40.59ms elapsed=183.66s tid=0x00007fa86303a400 nid=0x6503 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #19 daemon prio=9 os_prio=31 cpu=0.16ms elapsed=183.65s tid=0x00007fa863062a00 nid=0x6603 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #20 daemon prio=8 os_prio=31 cpu=4.71ms elapsed=183.64s tid=0x00007fa863818000 nid=0x6803 in Object.wait()  [0x000070000d83a000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@15.0.1/Native Method)
+	- waiting on <0x0000000740001170> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@15.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000740001170> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@15.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@15.0.1/InnocuousThread.java:134)
+
+   Locked ownable synchronizers:
+	- None
+
+"process reaper" #24 daemon prio=10 os_prio=31 cpu=0.24ms elapsed=182.75s tid=0x00007fa85e8fa000 nid=0x6903 runnable  [0x000070000d861000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ProcessHandleImpl.waitForProcessExit0(java.base@15.0.1/Native Method)
+	at java.lang.ProcessHandleImpl$1.run(java.base@15.0.1/ProcessHandleImpl.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- <0x0000000740001da8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"elasticsearch[Govind-Balaji-S][[timer]]" #29 daemon prio=5 os_prio=31 cpu=43.16ms elapsed=179.39s tid=0x00007fa85f477a00 nid=0x7703 sleeping [0x000070000e588000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@15.0.1/Native Method)
+	at org.elasticsearch.threadpool.ThreadPool$CachedTimeThread.run(ThreadPool.java:584)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][scheduler][T#1]" #30 daemon prio=5 os_prio=31 cpu=384.67ms elapsed=179.39s tid=0x00007fa860be5a00 nid=0x7903 waiting on condition  [0x000070000e68b000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740001340> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"ml-cpp-log-tail-thread" #31 daemon prio=5 os_prio=31 cpu=7.72ms elapsed=176.14s tid=0x00007fa86c0dae00 nid=0x8003 runnable  [0x000070000e78e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.FileInputStream.readBytes(java.base@15.0.1/Native Method)
+	at java.io.FileInputStream.read(java.base@15.0.1/FileInputStream.java:249)
+	at org.elasticsearch.xpack.ml.process.logging.CppLogMessageHandler.tailStream(CppLogMessageHandler.java:106)
+	at org.elasticsearch.xpack.ml.process.NativeController.lambda$tailLogsInThread$0(NativeController.java:94)
+	at org.elasticsearch.xpack.ml.process.NativeController$$Lambda$2912/0x000000080131ada0.run(Unknown Source)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"Connection evictor" #32 daemon prio=5 os_prio=31 cpu=1.96ms elapsed=175.43s tid=0x00007fa85eecea00 nid=0x7a03 waiting on condition  [0x000070000e891000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@15.0.1/Native Method)
+	at org.apache.http.impl.client.IdleConnectionEvictor$1.run(IdleConnectionEvictor.java:66)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[scheduler][T#1]" #33 daemon prio=5 os_prio=31 cpu=19.93ms elapsed=175.35s tid=0x00007fa86c0d7400 nid=0x15403 waiting on condition  [0x000070000e994000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000756800190> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"ticker-schedule-trigger-engine" #34 daemon prio=5 os_prio=31 cpu=36.56ms elapsed=175.35s tid=0x00007fa86c139a00 nid=0xae03 waiting on condition  [0x000070000ea97000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@15.0.1/Native Method)
+	at org.elasticsearch.xpack.watcher.trigger.schedule.engine.TickerScheduleTriggerEngine$Ticker.run(TickerScheduleTriggerEngine.java:194)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[scheduler][T#1]" #35 daemon prio=5 os_prio=31 cpu=4.37ms elapsed=175.34s tid=0x00007fa85eece200 nid=0xb103 waiting on condition  [0x000070000eb9a000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000756000190> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#1]" #36 daemon prio=5 os_prio=31 cpu=8.15ms elapsed=174.06s tid=0x00007fa86c148600 nid=0xb303 runnable  [0x000070000ec9d000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756e001c8> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756e00170> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#2]" #37 daemon prio=5 os_prio=31 cpu=0.37ms elapsed=174.05s tid=0x00007fa86c175a00 nid=0xb603 runnable  [0x000070000eda0000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755800468> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755800410> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#1]" #38 daemon prio=5 os_prio=31 cpu=10.62ms elapsed=173.65s tid=0x00007fa862993800 nid=0x14f03 waiting on condition  [0x000070000eea3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#2]" #46 daemon prio=5 os_prio=31 cpu=10.06ms elapsed=173.64s tid=0x00007fa85e8e7600 nid=0xcc03 waiting on condition  [0x000070000f6bb000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#3]" #47 daemon prio=5 os_prio=31 cpu=6.87ms elapsed=173.64s tid=0x00007fa86c19b600 nid=0x13f03 waiting on condition  [0x000070000f7be000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#4]" #48 daemon prio=5 os_prio=31 cpu=113.99ms elapsed=173.64s tid=0x00007fa86c17c800 nid=0x13c03 waiting on condition  [0x000070000f8c1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#5]" #49 daemon prio=5 os_prio=31 cpu=51.30ms elapsed=173.64s tid=0x00007fa86c17ce00 nid=0xd103 waiting on condition  [0x000070000f9c4000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#6]" #50 daemon prio=5 os_prio=31 cpu=23.01ms elapsed=173.64s tid=0x00007fa86c17d400 nid=0x13803 waiting on condition  [0x000070000fac7000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#7]" #51 daemon prio=5 os_prio=31 cpu=11.24ms elapsed=173.64s tid=0x00007fa862844c00 nid=0x13603 waiting on condition  [0x000070000fbca000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#8]" #52 daemon prio=5 os_prio=31 cpu=9.09ms elapsed=173.64s tid=0x00007fa85e8e5e00 nid=0xd503 waiting on condition  [0x000070000fccd000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#9]" #53 daemon prio=5 os_prio=31 cpu=33.42ms elapsed=173.64s tid=0x00007fa8609dba00 nid=0x13203 waiting on condition  [0x000070000fdd0000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#10]" #54 daemon prio=5 os_prio=31 cpu=46.36ms elapsed=173.64s tid=0x00007fa86c195c00 nid=0xda03 waiting on condition  [0x000070000fed3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][generic][T#11]" #55 daemon prio=5 os_prio=31 cpu=42.78ms elapsed=173.64s tid=0x00007fa860cbfe00 nid=0x12f03 waiting on condition  [0x000070000ffd6000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740002bc8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][clusterApplierService#updateTask][T#1]" #56 daemon prio=5 os_prio=31 cpu=322.18ms elapsed=173.64s tid=0x00007fa863431c00 nid=0xde03 waiting on condition  [0x00007000100d9000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000756400350> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:341)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(java.base@15.0.1/AbstractQueuedSynchronizer.java:505)
+	at java.util.concurrent.ForkJoinPool.managedBlock(java.base@15.0.1/ForkJoinPool.java:3137)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@15.0.1/AbstractQueuedSynchronizer.java:1614)
+	at java.util.concurrent.PriorityBlockingQueue.take(java.base@15.0.1/PriorityBlockingQueue.java:533)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#3]" #57 daemon prio=5 os_prio=31 cpu=7.35ms elapsed=173.64s tid=0x00007fa86d13bc00 nid=0xdf03 runnable  [0x00007000101dc000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755e00598> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755e00540> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#8]" #60 daemon prio=5 os_prio=31 cpu=6.99ms elapsed=173.64s tid=0x00007fa85fc23e00 nid=0x12503 runnable  [0x00007000102df000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756a001c8> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756a00170> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#5]" #58 daemon prio=5 os_prio=31 cpu=5.54ms elapsed=173.64s tid=0x00007fa8631a7000 nid=0x12403 runnable  [0x00007000103e2000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755a00d08> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755a00cb0> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#4]" #59 daemon prio=5 os_prio=31 cpu=6.54ms elapsed=173.64s tid=0x00007fa85fc24400 nid=0xe503 runnable  [0x00007000104e5000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756200548> (a sun.nio.ch.Util$2)
+	- locked <0x00000007562004f0> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#7]" #61 daemon prio=5 os_prio=31 cpu=6.84ms elapsed=173.64s tid=0x00007fa867009600 nid=0x12003 runnable  [0x00007000105e8000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756600368> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756600310> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#9]" #63 daemon prio=5 os_prio=31 cpu=8.50ms elapsed=173.64s tid=0x00007fa867009c00 nid=0x11e03 runnable  [0x00007000106eb000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756c001c8> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756c00170> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#6]" #62 daemon prio=5 os_prio=31 cpu=5.86ms elapsed=173.64s tid=0x00007fa86d13c200 nid=0xe903 runnable  [0x00007000107ee000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756000778> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756000720> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#10]" #64 daemon prio=5 os_prio=31 cpu=5.80ms elapsed=173.64s tid=0x00007fa85e8e6400 nid=0x11703 runnable  [0x00007000108f1000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755a01010> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755a00fb8> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#11]" #65 daemon prio=5 os_prio=31 cpu=5.63ms elapsed=173.64s tid=0x00007fa86c17b600 nid=0xea03 runnable  [0x00007000109f4000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x00000007562007e0> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756200788> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#12]" #66 daemon prio=5 os_prio=31 cpu=5.08ms elapsed=173.64s tid=0x00007fa85e8e6a00 nid=0x11203 runnable  [0x0000700010af7000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755800880> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755800828> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][masterService#updateTask][T#1]" #67 daemon prio=5 os_prio=31 cpu=57.78ms elapsed=173.53s tid=0x00007fa86c199c00 nid=0x10f03 waiting on condition  [0x0000700010bfa000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x00000007560009d8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:341)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(java.base@15.0.1/AbstractQueuedSynchronizer.java:505)
+	at java.util.concurrent.ForkJoinPool.managedBlock(java.base@15.0.1/ForkJoinPool.java:3137)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@15.0.1/AbstractQueuedSynchronizer.java:1614)
+	at java.util.concurrent.PriorityBlockingQueue.take(java.base@15.0.1/PriorityBlockingQueue.java:533)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][ml_utility][T#1]" #68 daemon prio=5 os_prio=31 cpu=8.44ms elapsed=173.41s tid=0x00007fa86c199600 nid=0x10d03 waiting on condition  [0x0000700010cfd000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x00000007400322b8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][ml_utility][T#2]" #69 daemon prio=5 os_prio=31 cpu=8.09ms elapsed=173.41s tid=0x00007fa86c1a9000 nid=0xf103 waiting on condition  [0x0000700010e00000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x00000007400322b8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][trigger_engine_scheduler][T#1]" #70 daemon prio=5 os_prio=31 cpu=0.12ms elapsed=173.41s tid=0x00007fa85ef0b000 nid=0xf303 waiting on condition  [0x0000700010f03000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000755e007d8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#13]" #71 daemon prio=5 os_prio=31 cpu=4.39ms elapsed=173.40s tid=0x00007fa85ef16a00 nid=0x10503 runnable  [0x0000700011006000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756200a78> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756200a20> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#14]" #72 daemon prio=5 os_prio=31 cpu=0.31ms elapsed=173.40s tid=0x00007fa85ef0ce00 nid=0xf503 runnable  [0x0000700011109000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000755800b18> (a sun.nio.ch.Util$2)
+	- locked <0x0000000755800ac0> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[keepAlive/7.11.0]" #22 prio=5 os_prio=31 cpu=0.11ms elapsed=173.39s tid=0x00007fa864fcde00 nid=0x10003 waiting on condition  [0x000070001120c000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x00000007400008a0> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:211)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(java.base@15.0.1/AbstractQueuedSynchronizer.java:714)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(java.base@15.0.1/AbstractQueuedSynchronizer.java:1046)
+	at java.util.concurrent.CountDownLatch.await(java.base@15.0.1/CountDownLatch.java:232)
+	at org.elasticsearch.bootstrap.Bootstrap$1.run(Bootstrap.java:78)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"DestroyJavaVM" #73 prio=5 os_prio=31 cpu=8496.69ms elapsed=173.39s tid=0x00007fa85ef0d400 nid=0x1f03 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][fetch_shard_started][T#1]" #74 daemon prio=5 os_prio=31 cpu=13.29ms elapsed=173.39s tid=0x00007fa86d136e00 nid=0xff03 waiting on condition  [0x000070001130f000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740006e38> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][fetch_shard_started][T#2]" #75 daemon prio=5 os_prio=31 cpu=4.07ms elapsed=173.39s tid=0x00007fa85ef17800 nid=0xfc03 waiting on condition  [0x0000700011412000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740006e38> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][fetch_shard_started][T#3]" #76 daemon prio=5 os_prio=31 cpu=4.86ms elapsed=173.39s tid=0x00007fa85ef17000 nid=0x15703 waiting on condition  [0x0000700011515000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740006e38> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][trigger_engine_scheduler][T#1]" #77 daemon prio=5 os_prio=31 cpu=0.13ms elapsed=173.12s tid=0x00007fa85f8a0800 nid=0x15c03 waiting on condition  [0x000070001171b000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000756400960> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][trigger_engine_scheduler][T#1]" #78 daemon prio=5 os_prio=31 cpu=0.12ms elapsed=173.11s tid=0x00007fa85f894200 nid=0x1fc03 waiting on condition  [0x000070001181e000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000755e00a28> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@15.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@15.0.1/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][DanglingIndices#updateTask][T#1]" #79 daemon prio=5 os_prio=31 cpu=11.99ms elapsed=172.83s tid=0x00007fa85ef00600 nid=0x16103 waiting on condition  [0x0000700011921000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000755800d58> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:211)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:743)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.take(java.base@15.0.1/LinkedTransferQueue.java:1366)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][refresh][T#1]" #80 daemon prio=5 os_prio=31 cpu=44.79ms elapsed=171.83s tid=0x00007fa85f7d4e00 nid=0x1fa03 waiting on condition  [0x0000700011a24000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004c518> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#15]" #81 daemon prio=5 os_prio=31 cpu=97.71ms elapsed=168.10s tid=0x00007fa863c47a00 nid=0x1f703 runnable  [0x0000700011b27000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756200ed0> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756200e78> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][search][T#1]" #82 daemon prio=5 os_prio=31 cpu=1981.22ms elapsed=168.01s tid=0x00007fa86b321a00 nid=0x1f503 waiting on condition  [0x0000700011c2a000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740055bd0> (a java.util.concurrent.LinkedTransferQueue)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:211)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:743)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.take(java.base@15.0.1/LinkedTransferQueue.java:1366)
+	at org.elasticsearch.common.util.concurrent.SizeBlockingQueue.take(SizeBlockingQueue.java:154)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][transport_worker][T#16]" #83 daemon prio=5 os_prio=31 cpu=8.37ms elapsed=166.70s tid=0x00007fa86298b400 nid=0x1e003 runnable  [0x000070001284e000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@15.0.1/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@15.0.1/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@15.0.1/SelectorImpl.java:129)
+	- locked <0x0000000756000e48> (a sun.nio.ch.Util$2)
+	- locked <0x0000000756000df0> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@15.0.1/SelectorImpl.java:146)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:803)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:457)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][search][T#2]" #84 daemon prio=5 os_prio=31 cpu=1624.36ms elapsed=165.94s tid=0x00007fa863d4ec00 nid=0x1de03 waiting on condition  [0x0000700012951000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x0000000740055bd0> (a java.util.concurrent.LinkedTransferQueue)
+	at java.util.concurrent.locks.LockSupport.park(java.base@15.0.1/LockSupport.java:211)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:743)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.take(java.base@15.0.1/LinkedTransferQueue.java:1366)
+	at org.elasticsearch.common.util.concurrent.SizeBlockingQueue.take(SizeBlockingQueue.java:154)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][refresh][T#2]" #85 daemon prio=5 os_prio=31 cpu=33.15ms elapsed=159.78s tid=0x00007fa85f0b5e00 nid=0x17b03 waiting on condition  [0x0000700012a54000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004c518> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][refresh][T#3]" #86 daemon prio=5 os_prio=31 cpu=28.93ms elapsed=146.75s tid=0x00007fa863ac2e00 nid=0x1da03 waiting on condition  [0x0000700012b57000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004c518> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][management][T#1]" #87 daemon prio=5 os_prio=31 cpu=23.31ms elapsed=143.41s tid=0x00007fa85f3b1800 nid=0x17e03 waiting on condition  [0x0000700012c5a000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004afb8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][management][T#2]" #88 daemon prio=5 os_prio=31 cpu=24.00ms elapsed=143.41s tid=0x00007fa85f0a8e00 nid=0x1d503 waiting on condition  [0x0000700012d5d000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004afb8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][management][T#3]" #89 daemon prio=5 os_prio=31 cpu=10.90ms elapsed=142.80s tid=0x00007fa85f1efe00 nid=0x18103 waiting on condition  [0x0000700012e60000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004afb8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][management][T#4]" #90 daemon prio=5 os_prio=31 cpu=8.65ms elapsed=142.80s tid=0x00007fa86d1b2e00 nid=0x18403 waiting on condition  [0x0000700012f63000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004afb8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][management][T#5]" #91 daemon prio=5 os_prio=31 cpu=6.16ms elapsed=142.79s tid=0x00007fa85f1f0400 nid=0x1ce03 waiting on condition  [0x0000700013066000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@15.0.1/Native Method)
+	- parking to wait for  <0x000000074004afb8> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@15.0.1/LockSupport.java:252)
+	at java.util.concurrent.LinkedTransferQueue.awaitMatch(java.base@15.0.1/LinkedTransferQueue.java:740)
+	at java.util.concurrent.LinkedTransferQueue.xfer(java.base@15.0.1/LinkedTransferQueue.java:684)
+	at java.util.concurrent.LinkedTransferQueue.poll(java.base@15.0.1/LinkedTransferQueue.java:1374)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@15.0.1/ThreadPoolExecutor.java:1055)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #92 daemon prio=9 os_prio=31 cpu=1.59ms elapsed=23.09s tid=0x00007fa85f1f3600 nid=0xc707 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"elasticsearch[Govind-Balaji-S][search][T#3]" #93 daemon prio=5 os_prio=31 cpu=572.54ms elapsed=1.00s tid=0x00007fa863d42c00 nid=0x14707 runnable  [0x000070000f0a8000]
+   java.lang.Thread.State: RUNNABLE
+	at org.elasticsearch.search.aggregations.metrics.ScriptedMetricAggregator$1.collect(ScriptedMetricAggregator.java:123)
+	at org.elasticsearch.search.aggregations.LeafBucketCollector.collect(LeafBucketCollector.java:96)
+	at org.apache.lucene.search.MultiCollector$MultiLeafCollector.collect(MultiCollector.java:192)
+	at org.apache.lucene.search.MatchAllDocsQuery$1$1.score(MatchAllDocsQuery.java:64)
+	at org.elasticsearch.search.internal.CancellableBulkScorer.score(CancellableBulkScorer.java:45)
+	at org.apache.lucene.search.BulkScorer.score(BulkScorer.java:39)
+	at org.elasticsearch.search.internal.ContextIndexSearcher.searchLeaf(ContextIndexSearcher.java:215)
+	at org.elasticsearch.search.internal.ContextIndexSearcher.search(ContextIndexSearcher.java:188)
+	at org.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:445)
+	at org.elasticsearch.search.query.QueryPhase.searchWithCollector(QueryPhase.java:331)
+	at org.elasticsearch.search.query.QueryPhase.executeInternal(QueryPhase.java:286)
+	at org.elasticsearch.search.query.QueryPhase.execute(QueryPhase.java:138)
+	at org.elasticsearch.search.SearchService.loadOrExecuteQueryPhase(SearchService.java:366)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:425)
+	at org.elasticsearch.search.SearchService.access$500(SearchService.java:135)
+	at org.elasticsearch.search.SearchService$2.lambda$onResponse$0(SearchService.java:395)
+	at org.elasticsearch.search.SearchService$2$$Lambda$5690/0x00000008018d0278.get(Unknown Source)
+	at org.elasticsearch.search.SearchService$$Lambda$5691/0x00000008018d04a0.get(Unknown Source)
+	at org.elasticsearch.action.ActionRunnable.lambda$supply$0(ActionRunnable.java:47)
+	at org.elasticsearch.action.ActionRunnable$$Lambda$5234/0x00000008017a5078.accept(Unknown Source)
+	at org.elasticsearch.action.ActionRunnable$2.doRun(ActionRunnable.java:62)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+	at org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:33)
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:732)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- <0x00000007579ddbe8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"VM Thread" os_prio=31 cpu=407.67ms elapsed=183.67s tid=0x00007fa8601633c0 nid=0x4203 runnable  
+
+"GC Thread#0" os_prio=31 cpu=788.41ms elapsed=184.82s tid=0x00007fa85e40e840 nid=0x4a03 runnable  
+
+"GC Thread#1" os_prio=31 cpu=788.32ms elapsed=184.82s tid=0x00007fa8601152f0 nid=0x4603 runnable  
+
+"GC Thread#2" os_prio=31 cpu=772.93ms elapsed=184.82s tid=0x00007fa85e619920 nid=0x3403 runnable  
+
+"GC Thread#3" os_prio=31 cpu=267.71ms elapsed=181.86s tid=0x00007fa8653241e0 nid=0x6e07 runnable  
+
+"GC Thread#4" os_prio=31 cpu=264.74ms elapsed=181.86s tid=0x00007fa865324920 nid=0x6b07 runnable  
+
+"GC Thread#5" os_prio=31 cpu=263.93ms elapsed=181.86s tid=0x00007fa8653250c0 nid=0x6c07 runnable  
+
+"GC Thread#6" os_prio=31 cpu=265.26ms elapsed=181.86s tid=0x00007fa8624b2b10 nid=0x6a07 runnable  
+
+"GC Thread#7" os_prio=31 cpu=266.85ms elapsed=181.86s tid=0x00007fa8624b36d0 nid=0x6f03 runnable  
+
+"GC Thread#8" os_prio=31 cpu=269.43ms elapsed=181.86s tid=0x00007fa86464bc90 nid=0x8e03 runnable  
+
+"GC Thread#9" os_prio=31 cpu=270.68ms elapsed=181.86s tid=0x00007fa86464cc40 nid=0x7103 runnable  
+
+"GC Thread#10" os_prio=31 cpu=269.86ms elapsed=181.86s tid=0x00007fa8624b4710 nid=0x8c03 runnable  
+
+"GC Thread#11" os_prio=31 cpu=268.53ms elapsed=181.86s tid=0x00007fa8624b5720 nid=0x8b03 runnable  
+
+"GC Thread#12" os_prio=31 cpu=267.81ms elapsed=181.86s tid=0x00007fa8624b6760 nid=0x8903 runnable  
+
+"G1 Main Marker" os_prio=31 cpu=1.34ms elapsed=184.82s tid=0x00007fa85e40fa40 nid=0x4903 runnable  
+
+"G1 Conc#0" os_prio=31 cpu=37.43ms elapsed=184.82s tid=0x00007fa85e618910 nid=0x3303 runnable  
+
+"G1 Conc#1" os_prio=31 cpu=35.95ms elapsed=180.06s tid=0x00007fa86a70a750 nid=0x8803 runnable  
+
+"G1 Conc#2" os_prio=31 cpu=40.17ms elapsed=180.06s tid=0x00007fa8668050a0 nid=0x8703 runnable  
+
+"G1 Refine#0" os_prio=31 cpu=143.75ms elapsed=183.68s tid=0x00007fa86260d260 nid=0x3603 runnable  
+
+"G1 Refine#1" os_prio=31 cpu=21.68ms elapsed=173.26s tid=0x00007fa86ced0770 nid=0x1fe03 runnable  
+
+"G1 Refine#2" os_prio=31 cpu=20.07ms elapsed=167.64s tid=0x00007fa8651ea180 nid=0x16903 runnable  
+
+"G1 Refine#3" os_prio=31 cpu=19.36ms elapsed=167.64s tid=0x00007fa8651eae20 nid=0x1f203 runnable  
+
+"G1 Refine#4" os_prio=31 cpu=18.51ms elapsed=167.64s tid=0x00007fa8651ebc00 nid=0x16b03 runnable  
+
+"G1 Refine#5" os_prio=31 cpu=17.00ms elapsed=167.64s tid=0x00007fa866b607f0 nid=0x1ee03 runnable  
+
+"G1 Refine#6" os_prio=31 cpu=16.70ms elapsed=167.45s tid=0x00007fa862506360 nid=0x16d03 runnable  
+
+"G1 Refine#7" os_prio=31 cpu=15.60ms elapsed=167.45s tid=0x00007fa86de8e2f0 nid=0x1e903 runnable  
+
+"G1 Refine#8" os_prio=31 cpu=15.57ms elapsed=167.45s tid=0x00007fa86de8f030 nid=0x16f03 runnable  
+
+"G1 Refine#9" os_prio=31 cpu=15.24ms elapsed=167.45s tid=0x00007fa86de901e0 nid=0x17103 runnable  
+
+"G1 Refine#10" os_prio=31 cpu=14.56ms elapsed=167.45s tid=0x00007fa866808370 nid=0x1e603 runnable  
+
+"G1 Refine#11" os_prio=31 cpu=14.21ms elapsed=167.45s tid=0x00007fa866809d90 nid=0x1e403 runnable  
+
+"G1 Refine#12" os_prio=31 cpu=14.62ms elapsed=167.12s tid=0x00007fa865207b10 nid=0x1e203 runnable  
+
+"G1 Young RemSet Sampling" os_prio=31 cpu=52.68ms elapsed=183.68s tid=0x00007fa85e70f2a0 nid=0x3703 runnable  
+
+"VM Periodic Task Thread" os_prio=31 cpu=121.95ms elapsed=183.65s tid=0x00007fa85e50d3a0 nid=0x6703 waiting on condition  
+
+JNI global refs: 42, weak refs: 45
+

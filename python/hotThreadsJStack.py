@@ -40,17 +40,19 @@ class HotThreadsJStack:
             stream = CommonTokenStream(lexer)
             parser = HotThreadsParser(stream)
             dump = parser.dump()
+            timestamp = dump.dumpHeader().timeStampLine().timestamp.text
             for thread_idx in range(context_list_length(dump.threadDump)):
                 thread_dump = dump.threadDump(thread_idx)
                 thread_header = thread_dump.threadHeader()
                 if self._above_threshold(thread_header):
                     # Store header only if beyond threshold cpu usage
                     thread_name = thread_header.name.getText()
+                    thread_header.timestamp = timestamp
                     if thread_name not in self._hot_thread_headers:
                         self._hot_thread_headers[thread_name] = []
                     self._hot_thread_headers[thread_name].append(thread_header)
 
-    ## Returns whether the thread_header's CPU usage is atleast self.min_cpu
+    # Returns whether the thread_header's CPU usage is atleast self.min_cpu
     def _above_threshold(self, thread_header):
         return self._get_header_usage(thread_header) >= self.min_cpu
 
@@ -76,7 +78,8 @@ class HotThreadsJStack:
         self.sort_stacks()
         for thread_name in self._hot_thread_names:
             for thread_header in self._hot_thread_headers[thread_name]:
-                print(thread_header.getText())
+                print(thread_header.timestamp, ':', thread_header.getText())
+                # print(thread_header.getText())
             print(self._threads_stack[thread_name].getText())
             print("-------------------------------------------------")
 
@@ -97,8 +100,9 @@ def main(argv):
         description='Filter jstack dump by ES thread names found in /_nodes/hot_threads outputs')
     argparser.add_argument('--jstack', required=True, help='jstack dump file')
     argparser.add_argument('--hot-threads', nargs='+', required=True, help='List of hot_threads output files')
-    argparser.add_argument('--top-threads', type=int, default=3, help='Number of top stacks to print')
-    argparser.add_argument('--min-cpu', type=float, default=0, help='Consider only the stacks with minimum cpu usage %')
+    argparser.add_argument('--top-threads', type=int, default=3, help='Number of top stacks to print, defaults to 3')
+    argparser.add_argument('--min-cpu', type=float, default=0., help='Consider only the stacks with minimum cpu usage '
+                                                                     '%%, defaults to 0')
 
     args = argparser.parse_args()
     hot_threads_jstack = HotThreadsJStack(args.hot_threads, args.jstack, args.top_threads, args.min_cpu)
