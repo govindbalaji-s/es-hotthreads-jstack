@@ -3,20 +3,28 @@ dump: dumpHeader threadDump*;
 
 dumpHeader: quoteLessLine timeStampLine quoteLessLine*;
 
-timeStampLine: WS NoQuoteWord WS NoQuoteWord WS NoQuoteWord WS timestamp=NoQuoteWord unquoted NL;
+timeStampLine: WS noQuoteWord WS noQuoteWord WS noQuoteWord WS timestamp=noQuoteWord unquoted NL;
 
 threadDump: threadHeader threadInfo;
 
-threadHeader: WS Percentage unquoted Quote name=unquoted Quote NL;
+threadHeader: WS percentage unNumberQuoted usage=Number timeUnits=others WS unNumberQuoted interval=Number unquoted Quote name=unquoted Quote NL;
 threadInfo: (quoteLessLine)*;
 
+
+
 quoteLessLine: (unquoted NL | NL);
-unquoted: (NoQuoteWord | WS)+;
+unquoted: (noQuoteWord | WS)+;
+unNumberQuoted: (noNumberQuoteWord | WS)+;
+noQuoteWord: (Others | Number | Percent)+;
+noNumberQuoteWord: (Others | Percent)+;
+percentage: Number Percent;
+others: Others+;
 Quote: '\'';
 NL: '\n';
 WS: (' ' | '\t')+;
+Number: Digit+ (Dot Digit+)?;
+Percent: '%';
+Others: .;
 
-Percentage: Digit+ (Dot Digit+)? '%';
 fragment Digit: [0-9];
 fragment Dot: '.';
-NoQuoteWord: (~[ \t\n'])+;
