@@ -6,10 +6,45 @@ from antlrgen.HotThreadsLexer import HotThreadsLexer
 from antlrgen.HotThreadsParser import HotThreadsParser
 from antlrgen.JStackDumpLexer import JStackDumpLexer
 from antlrgen.JStackDumpParser import JStackDumpParser
+from antlrgen.CatTasksParser import CatTasksParser
+from antlrgen.CatTasksLexer import CatTasksLexer
 
 
 class CatTask:
-    pass
+
+    def __init__(self, cat_task_context: CatTasksParser.CatTaskContext):
+        if cat_task_context is None:
+            return  # Only for testing
+        self._row_context = cat_task_context
+        if cat_task_context.detailed() is None:
+            common = cat_task_context.nonDetailed()
+            self._description = None
+        else:
+            common = cat_task_context.detailed().nonDetailed()
+            self._description = cat_task_context.detailed().description().getText()
+        self._id = common.task_id.text
+        self._parent_id = common.parent_task_id.text
+        self._type = common.typefield.text
+        self._start_time = common.start_time.text
+        self._timestamp = common.timestamp.text
+        self._running_time = common.running_time.text
+        self._ip = common.ip.text
+        self._node = common.node.text
+
+    @staticmethod
+    def parse_cat_tasks(file_name) -> List['CatTask']:
+        input_stream = FileStream(file_name)
+        lexer = CatTasksLexer(input_stream)
+        stream = CommonTokenStream(lexer)
+        parser = CatTasksParser(stream)
+        cat_tasks_context = parser.catTasks()
+
+        cat_tasks = []
+        for task_idx in range(context_list_length(cat_tasks_context.catTask)):
+            cat_task_context = cat_tasks_context.catTask(task_idx)
+            cat_task = CatTask(cat_task_context)
+            cat_tasks.append(cat_task)
+        return cat_tasks
 
 
 class JStack:

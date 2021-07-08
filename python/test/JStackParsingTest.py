@@ -1,6 +1,6 @@
 import unittest
 
-from ThreadInfo import HotThread, JStack
+from ThreadInfo import JStack
 
 
 class JStackParsingTestCase(unittest.TestCase):

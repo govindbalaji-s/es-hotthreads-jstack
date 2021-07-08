@@ -1,0 +1,5 @@
+action                                task_id                    parent_task_id             type      start_time    timestamp running_time ip        node
+indices:data/read/search              LBUSH3whSeSCfwGFs7DCog:785 -                          transport 1625748867635 12:54:27  2.5s         127.0.0.1 Govind-Balaji-S
+indices:data/read/search[phase/query] LBUSH3whSeSCfwGFs7DCog:786 LBUSH3whSeSCfwGFs7DCog:785 direct    1625748867635 12:54:27  2.5s         127.0.0.1 Govind-Balaji-S
+cluster:monitor/tasks/lists           LBUSH3whSeSCfwGFs7DCog:787 -                          transport 1625748870194 12:54:30  123micros    127.0.0.1 Govind-Balaji-S
+cluster:monitor/tasks/lists[n]        LBUSH3whSeSCfwGFs7DCog:788 LBUSH3whSeSCfwGFs7DCog:787 direct    1625748870194 12:54:30  48.4micros   127.0.0.1 Govind-Balaji-S
