@@ -11,12 +11,12 @@ from hotThreadsJStack import context_list_length
 class HotThreadsTestCase(unittest.TestCase):
     file_names = ['inputs/example.hotthreads', 'inputs/example4.hotthreads']
     thread_names = [
-        ['elasticsearch[Govind-Balaji-S][clusterApplierService#updateTask][T#1]',
-         'elasticsearch[Govind-Balaji-S][masterService#updateTask][T#1]'],
+        ['elasticsearch[Govind-Balaji-S][search][T#11][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:52]',
+         'elasticsearch[Govind-Balaji-S][search][T#12][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:54]'],
         ['elasticsearch[Govind-Balaji-S][search][T#7][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:2146]']
     ]
     usage_times = [
-        [276.4, 12.7],
+        [503.3, 502.7],
         [1.4]
     ]
     intervals = [
@@ -24,6 +24,18 @@ class HotThreadsTestCase(unittest.TestCase):
         [2]
     ]
     time_units = ['ms', 's']
+    task_ids = [
+        ['LBUSH3whSeSCfwGFs7DCog:52', 'LBUSH3whSeSCfwGFs7DCog:54'],
+        ['LBUSH3whSeSCfwGFs7DCog:2146']
+    ]
+    indices = [
+        ['kibana_sample_data_ecommerce', 'kibana_sample_data_ecommerce'],
+        ['kibana_sample_data_ecommerce', 'kibana_sample_data_ecommerce']
+    ]
+    shards = [
+        ['0', '0'],
+        ['0', '0']
+    ]
 
     def test_example(self):
         for i in range(2):
@@ -37,6 +49,9 @@ class HotThreadsTestCase(unittest.TestCase):
                             self.assertEqual(hot_thread._usage_time, self.usage_times[i][j])
                             self.assertEqual(hot_thread._interval, self.intervals[i][j])
                             self.assertEqual(hot_thread._time_units, self.time_units[i])
+                            self.assertEqual(hot_thread._task_id, self.task_ids[i][j])
+                            self.assertEqual(hot_thread._shard, self.shards[i][j])
+                            self.assertEqual(hot_thread._index, self.indices[i][j])
 
 
 if __name__ == '__main__':

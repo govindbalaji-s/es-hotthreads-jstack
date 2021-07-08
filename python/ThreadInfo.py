@@ -25,9 +25,28 @@ class HotThread:
         self._usage_time: float = float(thread_header.usage.text)
         self._interval: float = float(thread_header.interval.text)
         self._time_units: str = thread_header.timeUnits.getText()
+        self._task_id: str = ""
+        self._shard: str = ""
+        self._index: str = ""
+        self.parse_shard_task()
 
-    def percentage(self):
+    def percentage(self) -> float:
         return self._usage_time / self._interval
+
+    def parse_shard_task(self) -> str:
+        name = self._name
+        ltask = name.rindex('[taskId=')
+        rtask = name.rindex(']')
+        self._task_id = name[ltask + 8: rtask]
+        name = name[:ltask]
+        lshard = name.rindex('[')
+        rshard = name.rindex(']')
+        self._shard = name[lshard + 1: rshard-1]
+        name = name[:lshard]
+        lindex = name.rindex('[')
+        rindex = name.rindex(']')
+        self._index = name[lindex + 1: rindex]
+
 
     @staticmethod
     def parse_hot_threads(file_name) -> List['HotThread']:
