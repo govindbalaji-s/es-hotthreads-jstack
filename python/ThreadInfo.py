@@ -25,12 +25,15 @@ class CatTask:
             self._description = cat_task_context.detailed().description().getText()
         self._id = common.task_id.text
         self._parent_id = common.parent_task_id.text
+        self._parent = None
         self._type = common.typefield.text
         self._start_time = common.start_time.text
         self._timestamp = common.timestamp.text
         self._running_time = common.running_time.text
         self._ip = common.ip.text
         self._node = common.node.text
+
+        self._cascading_description = None
 
     @staticmethod
     def parse_cat_tasks(file_name) -> List['CatTask']:
@@ -51,13 +54,37 @@ class CatTask:
     def id(self):
         return self._id
 
+    @property
+    def parent_id(self):
+        return self._parent_id
+
+    @property
+    def parent(self):
+        return self._parent
+
+    @parent.setter
+    def parent(self, parent: 'CatTask'):
+        self._parent = parent
+
+    @property
+    def cascading_description(self) -> List[str]:
+        # Memoized computation of all ancestors' descriptions
+        if self._cascading_description is not None:
+            return self._cascading_description
+
+        ancestors_description = self._parent.cascading_description if self._parent is not None else []
+        self._cascading_description = [self._description] + ancestors_description
+        return self._cascading_description
+
     def __str__(self):
-        ret =  f'\tType: {self._type}\n'
+        ret = f'\tType: {self._type}\n'
         ret += f'\tStart Time: {self._start_time}\n'
         ret += f'\tRunning Time: {self._running_time}\n'
         ret += f'\tIP: {self._ip}\n'
         ret += f'\tNode: {self._node}\n'
-        ret += f'\tDescription: {self._description}\n'
+        ret += f'\tDescriptions(including cascading parent tasks):\n'
+        for description in self.cascading_description:
+            ret += f'\t\t-{description}\n'
         return ret
 
 
@@ -180,9 +207,6 @@ class ThreadInfo:
     def add_hot_thread(self, hot_thread):
         self._hot_threads.append(hot_thread)
 
-    def sort(self) -> None:
-        self._hot_threads.sort(key=lambda hot_thread: hot_thread.percentage(), reverse=True)
-
     def sort_key(self) -> float:
         return sum([hot_thread.percentage() for hot_thread in self._hot_threads])
 
@@ -195,32 +219,19 @@ class ThreadInfo:
         self._task: CatTask = value
 
     @staticmethod
-    def outer_join(hot_threads: List[HotThread], jstacks: List[JStack], cat_tasks: List[CatTask]) -> List['ThreadInfo']:
-        thread_infos: Dict[str, ThreadInfo] = {}
-
-        cat_tasks_lookup: Dict[str, CatTask] = {cat_task.id: cat_task for cat_task in cat_tasks}
-
-        for hot_thread in hot_threads:
-            name = hot_thread.name
-            thread_infos.setdefault(name, ThreadInfo(name)).add_hot_thread(hot_thread)
-            thread_infos[name].task = cat_tasks_lookup[hot_thread.task_id]
-
-        for jstack in jstacks:
-            name = jstack.name
-            thread_infos.setdefault(name, ThreadInfo(name)).add_jstack(jstack)
-
-        return list(thread_infos.values())
-
-    @staticmethod
     def inner_join(hot_threads: List[HotThread], jstacks: List[JStack], cat_tasks: List[CatTask]) -> List['ThreadInfo']:
         thread_infos: Dict[str, ThreadInfo] = {}
 
         cat_tasks_lookup: Dict[str, CatTask] = {cat_task.id: cat_task for cat_task in cat_tasks}
+        for task_id in cat_tasks_lookup:
+            cat_task = cat_tasks_lookup[task_id]
+            if cat_task.parent_id in cat_tasks_lookup:
+                cat_task.parent = cat_tasks_lookup[cat_task.parent_id]
 
         for hot_thread in hot_threads:
             name = hot_thread.name
             thread_infos.setdefault(name, ThreadInfo(name)).add_hot_thread(hot_thread)
-            if hot_thread.task_id in cat_tasks_lookup:
+            if hot_thread.task_id in cat_tasks_lookup and thread_infos[name].task is None:
                 thread_infos[name].task = cat_tasks_lookup[hot_thread.task_id]
 
         for jstack in jstacks:
@@ -241,8 +252,10 @@ class ThreadInfo:
         cat_tasks = [cat_task for sublist in cat_tasks for cat_task in sublist]
         return ThreadInfo.inner_join(hot_threads, jstacks, cat_tasks)
 
-    def __str__(self):
+    def __str__(self) -> str:
         ret = f'Thread Name:"{self._name}"\n'
+        if not self._hot_threads:
+            return 'Skipped due to min-cpu: ' + ret
         ret += 'Task:\n'
         ret += self._task.__str__() + '\n'
         ret += "HotThreads CPU Usage:\n"
@@ -256,6 +269,10 @@ class ThreadInfo:
             ret += '-----------------------------------------------------------------------------------------------\n'
         ret += '\n==============================================================================================\n'
         return ret
+
+    def filter_and_sort(self, min_cpu) -> None:
+        self._hot_threads = list(filter(lambda hot_thread: hot_thread.percentage() >= min_cpu, self._hot_threads))
+        self._hot_threads.sort(key=lambda hot_thread: hot_thread.percentage(), reverse=True)
 
 
 # Returns the length(smallest index that returns null) of the list generated by callable context_list

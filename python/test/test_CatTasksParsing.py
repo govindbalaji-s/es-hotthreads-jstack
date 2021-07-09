@@ -32,7 +32,7 @@ class CatTasksParsingTest(unittest.TestCase):
                         for attr in self.cat_task_dicts[i][j]:
                             self.assertEqual(cat_task.__dict__[attr], self.cat_task_dicts[i][j][attr])
                         for attr in cat_task.__dict__:
-                            if attr != '_row_context':
+                            if attr not in ['_row_context', '_parent', '_cascading_description']:
                                 self.assertEqual(cat_task.__dict__[attr], self.cat_task_dicts[i][j][attr])
 
 

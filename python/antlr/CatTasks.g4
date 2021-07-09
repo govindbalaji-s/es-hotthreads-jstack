@@ -15,7 +15,7 @@ nonDetailed: action=NonWS WS
         node=NonWS;
 
 detailed: nonDetailed WS description;
-description : (WS | NonWS)+;
+description : (WS | NonWS)*;
 
 WS: (' ')+;
 NL: '\n';
