@@ -1,0 +1,92 @@
+Thread Name:"elasticsearch[Govind-Balaji-S][search][T#11][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:848]"
+Task:
+	Type: direct
+	Start Time: 1625811606969
+	Running Time: 534.8ms
+	IP: 127.0.0.1
+	Node: Govind-Balaji-S
+	Description: None
+
+HotThreads CPU Usage:
+	- 99.5% usage at 2021-07-09T06:20:08.621Z,
+
+JStack dumps:
+Dump timestamp = 2021-07-09 11:50:10
+"elasticsearch[Govind-Balaji-S][search][T#11][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:848]" #98 daemon prio=5 os_prio=31 cpu=3012.14ms elapsed=3.69s tid=0x00007fc639d8d800 nid=0x1830b runnable  [0x000070000791b000]
+   java.lang.Thread.State: RUNNABLE
+	at org.elasticsearch.common.io.stream.StreamOutput.writeString(StreamOutput.java:427)
+	at org.elasticsearch.common.io.stream.StreamOutput.lambda$static$5(StreamOutput.java:667)
+	at org.elasticsearch.common.io.stream.StreamOutput$$Lambda$1307/0x00000008010445a8.write(Unknown Source)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeGenericValue(StreamOutput.java:843)
+	at org.elasticsearch.common.io.stream.StreamOutput$$Lambda$5819/0x0000000801906370.write(Unknown Source)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeCollection(StreamOutput.java:1200)
+	at org.elasticsearch.common.io.stream.StreamOutput.lambda$static$29(StreamOutput.java:796)
+	at org.elasticsearch.common.io.stream.StreamOutput$$Lambda$1331/0x0000000801047b18.write(Unknown Source)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeGenericValue(StreamOutput.java:843)
+	at org.elasticsearch.search.aggregations.metrics.InternalScriptedMetric$$Lambda$5818/0x0000000801906150.write(Unknown Source)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeCollection(StreamOutput.java:1200)
+	at org.elasticsearch.search.aggregations.metrics.InternalScriptedMetric.doWriteTo(InternalScriptedMetric.java:68)
+	at org.elasticsearch.search.aggregations.InternalAggregation.writeTo(InternalAggregation.java:191)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeNamedWriteable(StreamOutput.java:1112)
+	at org.elasticsearch.common.io.stream.StreamOutput.writeNamedWriteableList(StreamOutput.java:1237)
+	at org.elasticsearch.search.aggregations.InternalAggregations.writeTo(InternalAggregations.java:117)
+	at org.elasticsearch.common.io.stream.DelayableWriteable.getSerializedSize(DelayableWriteable.java:197)
+	at org.elasticsearch.common.io.stream.DelayableWriteable$Referencing.getSerializedSize(DelayableWriteable.java:111)
+	at org.elasticsearch.action.search.QueryPhaseResultConsumer$PendingMerges.ramBytesUsedQueryResult(QueryPhaseResultConsumer.java:283)
+	at org.elasticsearch.action.search.QueryPhaseResultConsumer$PendingMerges.consume(QueryPhaseResultConsumer.java:322)
+	- locked <0x000000060e5b81a0> (a org.elasticsearch.action.search.QueryPhaseResultConsumer$PendingMerges)
+	at org.elasticsearch.action.search.QueryPhaseResultConsumer.consumeResult(QueryPhaseResultConsumer.java:110)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.onShardResult(AbstractSearchAsyncAction.java:499)
+	at org.elasticsearch.action.search.SearchQueryThenFetchAsyncAction.onShardResult(SearchQueryThenFetchAsyncAction.java:97)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction$1.innerOnResponse(AbstractSearchAsyncAction.java:253)
+	at org.elasticsearch.action.search.SearchActionListener.onResponse(SearchActionListener.java:34)
+	at org.elasticsearch.action.search.SearchActionListener.onResponse(SearchActionListener.java:18)
+	at org.elasticsearch.action.search.SearchExecutionStatsCollector.onResponse(SearchExecutionStatsCollector.java:57)
+	at org.elasticsearch.action.search.SearchExecutionStatsCollector.onResponse(SearchExecutionStatsCollector.java:25)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleResponse(ActionListenerResponseHandler.java:43)
+	at org.elasticsearch.action.search.SearchTransportService$ConnectionCountingHandler.handleResponse(SearchTransportService.java:395)
+	at org.elasticsearch.transport.TransportService$6.handleResponse(TransportService.java:737)
+	at org.elasticsearch.transport.TransportService$ContextRestoreResponseHandler.handleResponse(TransportService.java:1278)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processResponse(TransportService.java:1356)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:1336)
+	at org.elasticsearch.transport.TaskTransportChannel.sendResponse(TaskTransportChannel.java:41)
+	at org.elasticsearch.action.support.ChannelActionListener.onResponse(ChannelActionListener.java:32)
+	at org.elasticsearch.action.support.ChannelActionListener.onResponse(ChannelActionListener.java:16)
+	at org.elasticsearch.action.ActionRunnable.lambda$supply$0(ActionRunnable.java:47)
+	at org.elasticsearch.action.ActionRunnable$$Lambda$5236/0x00000008017a4958.accept(Unknown Source)
+	at org.elasticsearch.action.ActionRunnable$2.doRun(ActionRunnable.java:62)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+	at org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:33)
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:732)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@15.0.1/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@15.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@15.0.1/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- <0x000000061f8006c8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+-----------------------------------------------------------------------------------------------
+
+==============================================================================================
+
+Thread Name:"ticker-schedule-trigger-engine"
+Task:
+None
+HotThreads CPU Usage:
+	- 4.8% usage at 2021-07-09T06:20:08.621Z,
+
+JStack dumps:
+Dump timestamp = 2021-07-09 11:50:10
+"ticker-schedule-trigger-engine" #34 daemon prio=5 os_prio=31 cpu=510.32ms elapsed=4027.26s tid=0x00007fc646d1a200 nid=0x15103 sleeping [0x0000700003554000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@15.0.1/Native Method)
+	at org.elasticsearch.xpack.watcher.trigger.schedule.engine.TickerScheduleTriggerEngine$Ticker.run(TickerScheduleTriggerEngine.java:194)
+
+   Locked ownable synchronizers:
+	- None
+
+-----------------------------------------------------------------------------------------------
+
+==============================================================================================
+

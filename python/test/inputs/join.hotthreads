@@ -1,0 +1,58 @@
+::: {Govind-Balaji-S}{LBUSH3whSeSCfwGFs7DCog}{PZlD9M9zSUuHC16U2GFglA}{127.0.0.1}{127.0.0.1:9300}{cdhilmrstw}{ml.machine_memory=17179869184, xpack.installed=true, transform.node=true, ml.max_open_jobs=20, ml.max_jvm_size=8589934592}
+   Hot threads at 2021-07-09T06:20:08.621Z, interval=500ms, busiestThreads=3, ignoreIdleThreads=true:
+
+   99.5% (497.5ms out of 500ms) cpu usage by thread 'elasticsearch[Govind-Balaji-S][search][T#11][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:848]'
+     3/10 snapshots sharing following 24 elements
+       java.base@15.0.1/java.util.HashMap$HashIterator.nextNode(HashMap.java:1588)
+       java.base@15.0.1/java.util.HashMap$KeyIterator.next(HashMap.java:1607)
+       app//org.elasticsearch.common.io.stream.StreamOutput.checkWriteable(StreamOutput.java:873)
+       app//org.elasticsearch.search.aggregations.metrics.ScriptedMetricAggregator.buildAggregation(ScriptedMetricAggregator.java:132)
+       app//org.elasticsearch.search.aggregations.metrics.MetricsAggregator.buildAggregations(MetricsAggregator.java:48)
+       app//org.elasticsearch.search.aggregations.Aggregator.buildTopLevel(Aggregator.java:143)
+       app//org.elasticsearch.search.aggregations.AggregationPhase.execute(AggregationPhase.java:113)
+       app//org.elasticsearch.search.query.QueryPhase.execute(QueryPhase.java:144)
+       app//org.elasticsearch.search.SearchService.loadOrExecuteQueryPhase(SearchService.java:371)
+       app//org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:434)
+       app//org.elasticsearch.search.SearchService.access$500(SearchService.java:136)
+       app//org.elasticsearch.search.SearchService$2.lambda$onResponse$0(SearchService.java:402)
+       app//org.elasticsearch.search.SearchService$2$$Lambda$5720/0x00000008018da698.get(Unknown Source)
+       app//org.elasticsearch.search.SearchService$$Lambda$5721/0x00000008018da8c0.get(Unknown Source)
+       app//org.elasticsearch.action.ActionRunnable.lambda$supply$0(ActionRunnable.java:47)
+       app//org.elasticsearch.action.ActionRunnable$$Lambda$5236/0x00000008017a4958.accept(Unknown Source)
+       app//org.elasticsearch.action.ActionRunnable$2.doRun(ActionRunnable.java:62)
+       app//org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+       app//org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:33)
+       app//org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:732)
+       app//org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+       java.base@15.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+       java.base@15.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+       java.base@15.0.1/java.lang.Thread.run(Thread.java:832)
+     7/10 snapshots sharing following 22 elements
+       app//org.elasticsearch.common.io.stream.StreamOutput.checkWriteable(StreamOutput.java:875)
+       app//org.elasticsearch.search.aggregations.metrics.ScriptedMetricAggregator.buildAggregation(ScriptedMetricAggregator.java:132)
+       app//org.elasticsearch.search.aggregations.metrics.MetricsAggregator.buildAggregations(MetricsAggregator.java:48)
+       app//org.elasticsearch.search.aggregations.Aggregator.buildTopLevel(Aggregator.java:143)
+       app//org.elasticsearch.search.aggregations.AggregationPhase.execute(AggregationPhase.java:113)
+       app//org.elasticsearch.search.query.QueryPhase.execute(QueryPhase.java:144)
+       app//org.elasticsearch.search.SearchService.loadOrExecuteQueryPhase(SearchService.java:371)
+       app//org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:434)
+       app//org.elasticsearch.search.SearchService.access$500(SearchService.java:136)
+       app//org.elasticsearch.search.SearchService$2.lambda$onResponse$0(SearchService.java:402)
+       app//org.elasticsearch.search.SearchService$2$$Lambda$5720/0x00000008018da698.get(Unknown Source)
+       app//org.elasticsearch.search.SearchService$$Lambda$5721/0x00000008018da8c0.get(Unknown Source)
+       app//org.elasticsearch.action.ActionRunnable.lambda$supply$0(ActionRunnable.java:47)
+       app//org.elasticsearch.action.ActionRunnable$$Lambda$5236/0x00000008017a4958.accept(Unknown Source)
+       app//org.elasticsearch.action.ActionRunnable$2.doRun(ActionRunnable.java:62)
+       app//org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+       app//org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:33)
+       app//org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:732)
+       app//org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26)
+       java.base@15.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+       java.base@15.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+       java.base@15.0.1/java.lang.Thread.run(Thread.java:832)
+
+    0.0% (24micros out of 500ms) cpu usage by thread 'ticker-schedule-trigger-engine'
+     10/10 snapshots sharing following 2 elements
+       java.base@15.0.1/java.lang.Thread.sleep(Native Method)
+       org.elasticsearch.xpack.watcher.trigger.schedule.engine.TickerScheduleTriggerEngine$Ticker.run(TickerScheduleTriggerEngine.java:194)
+

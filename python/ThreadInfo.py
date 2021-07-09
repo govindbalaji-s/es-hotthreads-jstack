@@ -1,4 +1,5 @@
-from typing import List
+import json
+from typing import List, Dict
 
 from antlr4 import FileStream, CommonTokenStream
 
@@ -46,6 +47,19 @@ class CatTask:
             cat_tasks.append(cat_task)
         return cat_tasks
 
+    @property
+    def id(self):
+        return self._id
+
+    def __str__(self):
+        ret =  f'\tType: {self._type}\n'
+        ret += f'\tStart Time: {self._start_time}\n'
+        ret += f'\tRunning Time: {self._running_time}\n'
+        ret += f'\tIP: {self._ip}\n'
+        ret += f'\tNode: {self._node}\n'
+        ret += f'\tDescription: {self._description}\n'
+        return ret
+
 
 class JStack:
 
@@ -74,6 +88,21 @@ class JStack:
                 jstacks.append(jstack)
         return jstacks
 
+    @property
+    def name(self):
+        return self._name
+
+    def __repr__(self):
+        return self.__dict__.__str__()
+
+    @property
+    def timestamp(self):
+        return self._timestamp
+
+    @property
+    def contents(self):
+        return self._contents
+
 
 class HotThread:
 
@@ -90,20 +119,20 @@ class HotThread:
         self.parse_shard_task()
 
     def percentage(self) -> float:
-        return self._usage_time / self._interval
+        return self._usage_time / self._interval * 100
 
     def parse_shard_task(self) -> None:
         name = self._name
-        ltask = name.rindex('[taskId=')
-        rtask = name.rindex(']')
+        ltask = name.rfind('[taskId=')
+        rtask = name.rfind(']')
         self._task_id = name[ltask + 8: rtask]
         name = name[:ltask]
-        lshard = name.rindex('[')
-        rshard = name.rindex(']')
+        lshard = name.rfind('[')
+        rshard = name.rfind(']')
         self._shard = name[lshard + 1: rshard - 1]
         name = name[:lshard]
-        lindex = name.rindex('[')
-        rindex = name.rindex(']')
+        lindex = name.rfind('[')
+        rindex = name.rfind(']')
         self._index = name[lindex + 1: rindex]
 
     @staticmethod
@@ -121,6 +150,21 @@ class HotThread:
 
         return ret
 
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def task_id(self):
+        return self._task_id
+
+    def __repr__(self):
+        return json.dumps(self.__dict__, default=lambda o: o.__str__())
+
+    @property
+    def timestamp(self):
+        return self._timestamp
+
 
 class ThreadInfo:
 
@@ -136,6 +180,12 @@ class ThreadInfo:
     def add_hot_thread(self, hot_thread):
         self._hot_threads.append(hot_thread)
 
+    def sort(self) -> None:
+        self._hot_threads.sort(key=lambda hot_thread: hot_thread.percentage(), reverse=True)
+
+    def sort_key(self) -> float:
+        return sum([hot_thread.percentage() for hot_thread in self._hot_threads])
+
     @property
     def task(self):
         return self._task
@@ -143,6 +193,69 @@ class ThreadInfo:
     @task.setter
     def task(self, value: CatTask):
         self._task: CatTask = value
+
+    @staticmethod
+    def outer_join(hot_threads: List[HotThread], jstacks: List[JStack], cat_tasks: List[CatTask]) -> List['ThreadInfo']:
+        thread_infos: Dict[str, ThreadInfo] = {}
+
+        cat_tasks_lookup: Dict[str, CatTask] = {cat_task.id: cat_task for cat_task in cat_tasks}
+
+        for hot_thread in hot_threads:
+            name = hot_thread.name
+            thread_infos.setdefault(name, ThreadInfo(name)).add_hot_thread(hot_thread)
+            thread_infos[name].task = cat_tasks_lookup[hot_thread.task_id]
+
+        for jstack in jstacks:
+            name = jstack.name
+            thread_infos.setdefault(name, ThreadInfo(name)).add_jstack(jstack)
+
+        return list(thread_infos.values())
+
+    @staticmethod
+    def inner_join(hot_threads: List[HotThread], jstacks: List[JStack], cat_tasks: List[CatTask]) -> List['ThreadInfo']:
+        thread_infos: Dict[str, ThreadInfo] = {}
+
+        cat_tasks_lookup: Dict[str, CatTask] = {cat_task.id: cat_task for cat_task in cat_tasks}
+
+        for hot_thread in hot_threads:
+            name = hot_thread.name
+            thread_infos.setdefault(name, ThreadInfo(name)).add_hot_thread(hot_thread)
+            if hot_thread.task_id in cat_tasks_lookup:
+                thread_infos[name].task = cat_tasks_lookup[hot_thread.task_id]
+
+        for jstack in jstacks:
+            name = jstack.name
+            if name in thread_infos:
+                thread_infos[name].add_jstack(jstack)
+
+        return list(thread_infos.values())
+
+    @staticmethod
+    def inner_join_files(hot_thread_files: List[str], jstack_files: List[str], cat_task_files: List[str]) -> List[
+        'ThreadInfo']:
+        hot_threads = [HotThread.parse_hot_threads(file) for file in hot_thread_files]
+        hot_threads = [hot_thread for sublist in hot_threads for hot_thread in sublist]
+        jstacks = [JStack.parse_jstacks(file, None) for file in jstack_files]
+        jstacks = [jstack for sublist in jstacks for jstack in sublist]
+        cat_tasks = [CatTask.parse_cat_tasks(file) for file in cat_task_files]
+        cat_tasks = [cat_task for sublist in cat_tasks for cat_task in sublist]
+        return ThreadInfo.inner_join(hot_threads, jstacks, cat_tasks)
+
+    def __str__(self):
+        ret = f'Thread Name:"{self._name}"\n'
+        ret += 'Task:\n'
+        ret += self._task.__str__() + '\n'
+        ret += "HotThreads CPU Usage:\n"
+        for hot_thread in self._hot_threads:
+            ret += f'\t- {hot_thread.percentage():.1f}% usage at {hot_thread.timestamp}\n'
+        ret += '\n'
+        ret += 'JStack dumps:\n'
+        for jstack in self._jstacks:
+            ret += f'Dump timestamp = {jstack.timestamp}\n'
+            ret += jstack.contents
+            ret += '-----------------------------------------------------------------------------------------------\n'
+        ret += '\n==============================================================================================\n'
+        return ret
 
 
 # Returns the length(smallest index that returns null) of the list generated by callable context_list
