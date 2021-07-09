@@ -1,8 +1,0 @@
-::: {Govind-Balaji-S}{LBUSH3whSeSCfwGFs7DCog}{PZlD9M9zSUuHC16U2GFglA}{127.0.0.1}{127.0.0.1:9300}{cdhilmrstw}{ml.machine_memory=17179869184, xpack.installed=true, transform.node=true, ml.max_open_jobs=20, ml.max_jvm_size=8589934592}
-   Hot threads at 2021-07-09T09:05:14.228Z, interval=500ms, busiestThreads=3, ignoreIdleThreads=true:
-   
-    0.0% (66micros out of 500ms) cpu usage by thread 'ticker-schedule-trigger-engine'
-     10/10 snapshots sharing following 2 elements
-       java.base@15.0.1/java.lang.Thread.sleep(Native Method)
-       org.elasticsearch.xpack.watcher.trigger.schedule.engine.TickerScheduleTriggerEngine$Ticker.run(TickerScheduleTriggerEngine.java:194)
-
