@@ -8,7 +8,7 @@ import requests
 from ThreadInfo import ThreadInfo
 
 
-def fetch_async(pid, location, num_hot_threads, num_jstacks, num_cat_tasks):
+def fetch_async(pid, location, num_hot_threads, num_jstacks, num_cat_tasks, no_detailed_cat_task):
     hot_threads = []
     jstacks = []
     cat_tasks = []
@@ -29,7 +29,7 @@ def fetch_async(pid, location, num_hot_threads, num_jstacks, num_cat_tasks):
     for i in range(num_cat_tasks):
         file = f'dumps/{timestamp}/cat_tasks_{i}.txt'
         cat_tasks.append(file)
-        r = requests.get(f'http://{location}/_cat/tasks?detailed=true')
+        r = requests.get(f'http://{location}/_cat/tasks?detailed={"false" if no_detailed_cat_task else "true"}')
         with open(file, 'w') as io_file:
             io_file.write(r.text)
 
@@ -48,16 +48,15 @@ def main():
                            help='Number of times to take jstack dump. Default=1')
     argparser.add_argument('--num-cat-tasks', type=int, default=1,
                            help='Number of times to take cat tasks output. Default=1')
-    # argparser.add_argument('--jstacks', nargs='+', required=True, help='jstack dump file')
-    # argparser.add_argument('--hot-threads', nargs='+', required=True, help='List of hot_threads output files')
-    # argparser.add_argument('--cat-tasks', nargs='+', required=False, help='List of cat tasks output files')
     argparser.add_argument('--top-threads', type=int, default=3, help='Number of top threads to print, defaults to 3')
     argparser.add_argument('--min-cpu', type=float, default=0.,
                            help='Consider only the hot threads measure with minimum cpu usage '
                                 '%%, defaults to 0')
+    argparser.add_argument('--no-detailed-cat-task', action='store_true')
+
     args = argparser.parse_args()
     hot_threads_files, jstacks_files, cat_tasks_files = fetch_async(args.pid, args.location, args.num_hot_threads,
-                                                                    args.num_jstacks, args.num_cat_tasks)
+                                                                    args.num_jstacks, args.num_cat_tasks, args.no_detailed_cat_task)
     print_threads_info(hot_threads_files, jstacks_files, cat_tasks_files, args.min_cpu, args.top_threads)
 
 
