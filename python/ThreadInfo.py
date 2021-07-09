@@ -246,7 +246,8 @@ class ThreadInfo:
         'ThreadInfo']:
         hot_threads = [HotThread.parse_hot_threads(file) for file in hot_thread_files]
         hot_threads = [hot_thread for sublist in hot_threads for hot_thread in sublist]
-        jstacks = [JStack.parse_jstacks(file, None) for file in jstack_files]
+        thread_names = [hot_thread.name for hot_thread in hot_threads]
+        jstacks = [JStack.parse_jstacks(file, thread_names) for file in jstack_files]
         jstacks = [jstack for sublist in jstacks for jstack in sublist]
         cat_tasks = [CatTask.parse_cat_tasks(file) for file in cat_task_files]
         cat_tasks = [cat_task for sublist in cat_tasks for cat_task in sublist]

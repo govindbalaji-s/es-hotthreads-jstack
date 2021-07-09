@@ -39,15 +39,19 @@ def fetch_async(pid, location, num_hot_threads, num_jstacks, num_cat_tasks):
 def main():
     argparser = argparse.ArgumentParser(
         description='Filter jstack dump by ES thread names found in /_nodes/hot_threads outputs')
-    argparser.add_argument('pid', type=int)
-    argparser.add_argument('--location', default='localhost:9200')
-    argparser.add_argument('--num-hot-threads', type=int, default=1)
-    argparser.add_argument('--num-jstacks', type=int, default=1)
-    argparser.add_argument('--num-cat-tasks', type=int, default=1)
+    argparser.add_argument('pid', type=int, help='PID of ElasticSearch')
+    argparser.add_argument('--location', default='localhost:9200',
+                           help='Location where ES is running. Default=localhost:9200')
+    argparser.add_argument('--num-hot-threads', type=int, default=1,
+                           help='Number of times to take hot threads output. Default=1')
+    argparser.add_argument('--num-jstacks', type=int, default=1,
+                           help='Number of times to take jstack dump. Default=1')
+    argparser.add_argument('--num-cat-tasks', type=int, default=1,
+                           help='Number of times to take cat tasks output. Default=1')
     # argparser.add_argument('--jstacks', nargs='+', required=True, help='jstack dump file')
     # argparser.add_argument('--hot-threads', nargs='+', required=True, help='List of hot_threads output files')
     # argparser.add_argument('--cat-tasks', nargs='+', required=False, help='List of cat tasks output files')
-    argparser.add_argument('--top-threads', type=int, default=3, help='Number of top stacks to print, defaults to 3')
+    argparser.add_argument('--top-threads', type=int, default=3, help='Number of top threads to print, defaults to 3')
     argparser.add_argument('--min-cpu', type=float, default=0.,
                            help='Consider only the hot threads measure with minimum cpu usage '
                                 '%%, defaults to 0')
