@@ -33,7 +33,8 @@ Tool to summarise `jstack` dumps of threads shown as "hot threads" by ES `_nodes
     python3 hotThreadsJStack.py 2386 --num-hot-threads 2 --num-jstacks 0 --num-cat-tasks 2 --location localhost:9200 --top-threads 3
 ### Output:
 
-```Thread Name:"elasticsearch[Govind-Balaji-S][search][T#24][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:2908]"
+```
+Thread Name:"elasticsearch[Govind-Balaji-S][search][T#24][[kibana_sample_data_ecommerce][0]][taskId=LBUSH3whSeSCfwGFs7DCog:2908]"
 Task:
 Type: direct
 Start Time: 1625821906993
